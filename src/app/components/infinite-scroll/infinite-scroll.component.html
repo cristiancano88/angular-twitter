@@ -1,0 +1,45 @@
+<br><br><br>
+<div class="container mt-5" infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
+    <div class="row">
+        <form class="col s4" (ngSubmit)="searchCall()">
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="hashtags" class="mr-2">Tweet Search</label>
+                    <input id="hashtags" type="text" [(ngModel)]="searchquery" [ngModelOptions]="{standalone: true}"
+                        placeholder="Search" (keypress)="omitSpecialChar($event)">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-sm-4 mt-4" *ngFor="let item of tweets">
+            <div class="card">
+                <div class="card-body">
+                    <div style="display: inline">
+                        <tr>
+                            <td>
+                                <img src={{item.user.profile_image_url}} class="profile" style="display: inline;"
+                                    height="50px" width="50px" alt="..."> </td>
+                            <td>
+                                <h5 class="card-title" style="display: inline;"> {{item.user.name}} </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">@{{item.user.screen_name}}</h6>
+                            </td>
+                        </tr>
+                    </div>
+
+
+                    <p class="card-text">{{transform(item.text)}}</p>
+                    <div class="icons">
+                        <img src="https://www.flaticon.es/svg/static/icons/svg/860/860774.svg">
+                        <img src="https://www.flaticon.es/svg/static/icons/svg/89/89930.svg">
+                        <img src="https://image.flaticon.com/icons/png/128/3529/3529899.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4" *ngIf="!tweets.length && searchquery && filter">
+            <p>No hay resultado para el filtro</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+{
+  "cSpell.language": "en,es",
+  "cSpell.words": [
+    "Dropdown",
+    "loggro"
+  ],
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.disableLanguages": [
+    "html"
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+"editor.codeActionsOnSave": {
+  "source.organizeImports": true
+}
+}

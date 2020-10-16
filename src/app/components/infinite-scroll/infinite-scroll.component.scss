@@ -1,0 +1,27 @@
+.card-image {
+  float: left;
+  width: 40%;
+  height: 250px;
+
+  img {
+    height: 50%;
+  }
+}
+
+.card-title {
+  padding-left: 20px;
+}
+
+.icons {
+  text-align: center;
+
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 20%;
+  }
+
+  img:last-child {
+    margin: 0;
+  }
+}
